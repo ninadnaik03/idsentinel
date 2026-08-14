@@ -1,0 +1,9 @@
+# Closest practical paper-oriented profile for temporary/free external GPU use.
+device: cuda
+num_workers: 2
+batch_size: 8
+gradient_accumulation_steps: 4
+mixed_precision: true
+cache_mode: portrait_crops
+decode_on_demand: true
+max_samples_per_class: null

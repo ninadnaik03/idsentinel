@@ -1,0 +1,245 @@
+{
+  "status": "complete",
+  "resolved_samples": 300,
+  "unresolved_samples": 0,
+  "exact_or_near_duplicate_clusters": 0,
+  "duplicate_split_violations": [],
+  "detector_counts": {
+    "retinaface": 299,
+    "haar": 1
+  },
+  "by_class": {
+    "BONA_FIDE": {
+      "count": 100,
+      "detector_counts": {
+        "retinaface": 100
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.994032324552536,
+      "median_confidence": 0.9989134669303894,
+      "mean_bbox_area_ratio": 0.01362941784035534,
+      "median_bbox_area_ratio": 0.011236129258863744,
+      "padding_count": 39,
+      "padding_percent": 39.0,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    },
+    "PRINT": {
+      "count": 100,
+      "detector_counts": {
+        "retinaface": 100
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.9960100227594375,
+      "median_confidence": 0.9986330568790436,
+      "mean_bbox_area_ratio": 0.011800528016433163,
+      "median_bbox_area_ratio": 0.010975454986394507,
+      "padding_count": 32,
+      "padding_percent": 32.0,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    },
+    "SCREEN": {
+      "count": 100,
+      "detector_counts": {
+        "retinaface": 99,
+        "haar": 1
+      },
+      "detector_percent": {
+        "retinaface": 99.0,
+        "haar": 1.0
+      },
+      "mean_confidence": 0.9863952952623367,
+      "median_confidence": 0.999557375907898,
+      "mean_bbox_area_ratio": 0.0164928228665373,
+      "median_bbox_area_ratio": 0.014658482267643396,
+      "padding_count": 61,
+      "padding_percent": 61.0,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    }
+  },
+  "by_document_type": {
+    "alb_id": {
+      "count": 44,
+      "detector_counts": {
+        "retinaface": 44
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.9866724556142633,
+      "median_confidence": 0.9958382546901703,
+      "mean_bbox_area_ratio": 0.008891004744963096,
+      "median_bbox_area_ratio": 0.008003145934496534,
+      "padding_count": 2,
+      "padding_percent": 4.545454545454546,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    },
+    "aze_passport": {
+      "count": 48,
+      "detector_counts": {
+        "retinaface": 48
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.9860874849061171,
+      "median_confidence": 0.9984452128410339,
+      "mean_bbox_area_ratio": 0.013243050747779652,
+      "median_bbox_area_ratio": 0.01050415782652523,
+      "padding_count": 20,
+      "padding_percent": 41.666666666666664,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    },
+    "esp_id": {
+      "count": 38,
+      "detector_counts": {
+        "retinaface": 37,
+        "haar": 1
+      },
+      "detector_percent": {
+        "retinaface": 97.36842105263158,
+        "haar": 2.6315789473684212
+      },
+      "mean_confidence": 0.9944032822784624,
+      "median_confidence": 0.9988082051277161,
+      "mean_bbox_area_ratio": 0.01268652122155065,
+      "median_bbox_area_ratio": 0.011633220763726485,
+      "padding_count": 13,
+      "padding_percent": 34.21052631578947,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    },
+    "est_id": {
+      "count": 30,
+      "detector_counts": {
+        "retinaface": 30
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.9892651597658794,
+      "median_confidence": 0.9996145665645599,
+      "mean_bbox_area_ratio": 0.023812192403617632,
+      "median_bbox_area_ratio": 0.020257040347464176,
+      "padding_count": 22,
+      "padding_percent": 73.33333333333333,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    },
+    "fin_id": {
+      "count": 30,
+      "detector_counts": {
+        "retinaface": 30
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.9873054643472036,
+      "median_confidence": 0.9987004399299622,
+      "mean_bbox_area_ratio": 0.010813541506368589,
+      "median_bbox_area_ratio": 0.010972822950639113,
+      "padding_count": 5,
+      "padding_percent": 16.666666666666668,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    },
+    "grc_passport": {
+      "count": 30,
+      "detector_counts": {
+        "retinaface": 30
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.9994925379753112,
+      "median_confidence": 0.9998151957988739,
+      "mean_bbox_area_ratio": 0.01666158478223498,
+      "median_bbox_area_ratio": 0.017192093234241188,
+      "padding_count": 26,
+      "padding_percent": 86.66666666666667,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    },
+    "lva_passport": {
+      "count": 32,
+      "detector_counts": {
+        "retinaface": 32
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.9982891883701086,
+      "median_confidence": 0.9996196329593658,
+      "mean_bbox_area_ratio": 0.013744923207119612,
+      "median_bbox_area_ratio": 0.014638093510827871,
+      "padding_count": 21,
+      "padding_percent": 65.625,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    },
+    "rus_internalpassport": {
+      "count": 16,
+      "detector_counts": {
+        "retinaface": 16
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.9991223439574242,
+      "median_confidence": 0.9997692108154297,
+      "mean_bbox_area_ratio": 0.01635558222819212,
+      "median_bbox_area_ratio": 0.015692433182436537,
+      "padding_count": 9,
+      "padding_percent": 56.25,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    },
+    "srb_passport": {
+      "count": 16,
+      "detector_counts": {
+        "retinaface": 16
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.9968175701797009,
+      "median_confidence": 0.9997292160987854,
+      "mean_bbox_area_ratio": 0.015865369103745437,
+      "median_bbox_area_ratio": 0.01464833165938924,
+      "padding_count": 10,
+      "padding_percent": 62.5,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    },
+    "svk_id": {
+      "count": 16,
+      "detector_counts": {
+        "retinaface": 16
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.9967790432274342,
+      "median_confidence": 0.9987463653087616,
+      "mean_bbox_area_ratio": 0.01183288103352449,
+      "median_bbox_area_ratio": 0.011292386110869784,
+      "padding_count": 4,
+      "padding_percent": 25.0,
+      "complete_failure_count": 0,
+      "complete_failure_percent": 0.0
+    }
+  },
+  "median_cpu_seconds": 0.303211100000226,
+  "p95_cpu_seconds": 0.39793699999972887,
+  "peak_rss_bytes": 600981504,
+  "crop_storage_bytes": 16029567,
+  "failures": []
+}

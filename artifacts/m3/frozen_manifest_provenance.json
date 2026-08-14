@@ -1,0 +1,7 @@
+{
+  "protocol": "Protocol A-Reduced",
+  "frozen_local_manifest_sha256": "9f435547bf0ac20b0a265a40126c0366ef52a64aaac34a868e4adbe6319a0349",
+  "gpu_bundle_manifest_sha256": "4088bd0b7ad8ad00b7478fe8effde238c3a34b0d3ed3164323a05b779799259d",
+  "note": "The private GPU bundle rewrote only crop paths to portable POSIX-relative paths; sample IDs, labels, splits, hashes, and pixels were unchanged.",
+  "test_prediction_rows": 44
+}

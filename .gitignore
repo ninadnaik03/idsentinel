@@ -1,0 +1,53 @@
+data/raw/**/*.zip
+data/raw/**/*.z[0-9][0-9]
+data/raw/**/*.tar
+data/raw/**/*.mp4
+data/raw/**/*.mov
+data/raw/**/*.jpg
+data/raw/**/*.jpeg
+data/raw/**/*.png
+!data/raw/source_metadata/**/*.txt
+!data/raw/source_metadata/**/*.md
+!data/raw/source_metadata/**/*.csv
+.venv/
+vendor/
+data/raw/dlc_chunks/
+
+# Restricted/private data and derived imagery
+artifacts/data/
+artifacts/private/
+artifacts/smoke/
+artifacts/plots/*failures*.png
+artifacts/plots/*edge_examples*.png
+artifacts/plots/portrait_extraction*.png
+
+# Large model checkpoints and local experiment payloads
+artifacts/**/*.pt
+artifacts/**/*.pth
+artifacts/**/*.ckpt
+artifacts/checkpoints/*.onnx
+
+# Dataset-derived crops and source annotation tables are not redistributed
+data/processed/**
+!data/processed/.gitkeep
+data/raw/source_metadata/**/*.csv
+
+# Prediction-level outputs and metrics containing local crop paths
+artifacts/metrics/*test_predictions.csv
+artifacts/metrics/m3_baseline_metrics.json
+artifacts/metrics/m4_texture_metrics.json
+artifacts/metrics/m5_edge_metrics.json
+
+# Local environments, caches, secrets, and build products
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+dist/
+*.zip
+*.tar
+*.log

@@ -1,0 +1,10 @@
+# Low-resource development profile; not a paper-faithful training claim.
+device: cpu
+num_workers: 0
+batch_size: 1
+gradient_accumulation_steps: 1
+mixed_precision: false
+cache_mode: none
+decode_on_demand: true
+max_samples_per_class: 64
+

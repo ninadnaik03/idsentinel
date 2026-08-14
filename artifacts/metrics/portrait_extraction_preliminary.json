@@ -1,0 +1,44 @@
+{
+  "status": "complete",
+  "resolved_samples": 32,
+  "unresolved_samples": 1392,
+  "exact_or_near_duplicate_clusters": 0,
+  "duplicate_split_violations": [],
+  "detector_counts": {
+    "retinaface": 31,
+    "haar": 1
+  },
+  "by_class": {
+    "BONA_FIDE": {
+      "count": 16,
+      "detector_counts": {
+        "retinaface": 16
+      },
+      "detector_percent": {
+        "retinaface": 100.0
+      },
+      "mean_confidence": 0.9940505288541317,
+      "median_confidence": 0.9944555163383484,
+      "mean_bbox_area_ratio": 0.006681628036365308
+    },
+    "PRINT": {
+      "count": 16,
+      "detector_counts": {
+        "retinaface": 15,
+        "haar": 1
+      },
+      "detector_percent": {
+        "retinaface": 93.75,
+        "haar": 6.25
+      },
+      "mean_confidence": 0.9940303899347782,
+      "median_confidence": 0.9968411922454834,
+      "mean_bbox_area_ratio": 0.0057246440026720805
+    }
+  },
+  "median_cpu_seconds": 0.27406574999986333,
+  "p95_cpu_seconds": 0.3240800000003219,
+  "peak_rss_bytes": 731168768,
+  "crop_storage_bytes": 1576971,
+  "failures": []
+}
