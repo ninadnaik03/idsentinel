@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://idsentinel.vercel.app"),
+  metadataBase: new URL("https://idsentinel-flame.vercel.app"),
   title: { default: "IDSentinel | Document Presentation Attack Detection", template: "%s | IDSentinel" },
   description: "IDSentinel is a 24-hour research implementation exploring semantic, texture and edge representations for identity-document presentation attack detection.",
   icons: {
