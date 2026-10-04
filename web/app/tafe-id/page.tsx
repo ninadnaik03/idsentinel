@@ -1,94 +1,47 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Eyebrow, Shell } from "../components";
 import { TamperSample } from "./sample";
+import "./retro.css";
 
 export const metadata: Metadata = {
-  title: "TAFE-ID | Text Manipulation Localization",
-  description: "A verified RTM/ASCFormer document-tampering localization project with reproducible metrics, sample interaction and an honest implementation record.",
+  title: { absolute: "TAFE-ID — Document Forensics Lab" },
+  description: "An independent document-tampering localization project. Explore the ASCFormer reference results, TAFE frequency experiments, and reproducible inference record.",
+  icons: { icon: "/tafe-id/icon.svg", shortcut: "/tafe-id/icon.svg" },
+  openGraph: { title: "TAFE-ID — Document Forensics Lab", description: "Find the edit. Follow the evidence.", images: [{ url: "/tafe-id/share.svg", width: 1200, height: 630 }], url: "/tafe-id" },
+  twitter: { card: "summary", title: "TAFE-ID — Document Forensics Lab", description: "Find the edit. Follow the evidence.", images: ["/tafe-id/icon.svg"] },
 };
+const categories = [["Splice", .8826], ["Cover", .8601], ["Copy-move", .8212], ["Edit", .7935], ["Insert", .2336], ["Inpaint", .1545]] as const;
+const links = [["#sample", "Workbench"], ["#results", "Results"], ["#method", "Method"], ["#record", "Lab notes"]];
 
-const metrics = [
-  ["0.844", "Precision"], ["0.493", "Recall"], ["0.623", "F1"], ["0.452", "IoU"],
-];
-
-const categories = [
-  ["Splice", .8826], ["Cover", .8601], ["CPMV", .8212], ["Edit", .7935], ["Insert", .2336], ["Inpaint", .1545],
-];
-
+function ScanGraphic() {
+  return <div className="lab-monitor" aria-label="Illustrated document localization pipeline, not a model prediction">
+    <div className="monitor-bar"><span>TAFE / VISUAL INSPECTOR</span><span>ILLUSTRATION · 01</span></div>
+    <svg viewBox="0 0 560 440" role="img" aria-label="Document with an outlined text region feeding into a pixel mask">
+      <defs><pattern id="dotgrid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#5c6d5d"/></pattern></defs>
+      <rect width="560" height="440" fill="url(#dotgrid)" opacity=".4"/>
+      <g transform="translate(55 44) rotate(-5 140 175)"><rect x="5" y="6" width="256" height="343" fill="#080e0a"/><rect width="256" height="343" rx="2" fill="#eae4d2"/>
+      <text x="24" y="40" fill="#283329" fontSize="11" fontFamily="monospace">DOCUMENT / 001</text><path d="M24 58H231 M24 92H200 M24 109H224 M24 126H190 M24 178H226 M24 195H213 M24 212H225 M24 251H210 M24 268H186 M24 285H223" stroke="#777e6e" strokeWidth="5"/>
+      <rect x="67" y="137" width="135" height="26" fill="#d5693f" opacity=".45"/><rect x="60" y="130" width="149" height="40" fill="none" stroke="#bb542d" strokeDasharray="4 3"/><text x="24" y="323" fill="#777e6e" fontSize="9" fontFamily="monospace">LOCALIZATION / PIXEL SPACE</text></g>
+      <path d="M274 188H362V253H384" fill="none" stroke="#c6eb95" strokeWidth="1.5"/><circle cx="274" cy="188" r="4" fill="#c6eb95"/>
+      <rect x="369" y="204" width="151" height="146" fill="#15201a" stroke="#61735b"/><path d="M385 220h14m-14 0v14m120-14h-14m14 0v14M385 335h14m-14 0v-14m120 14h-14m14 0v-14" stroke="#c6eb95" fill="none"/>
+      <path d="M401 260h82v17h-82z" fill="#c6eb95"/><text x="385" y="373" fill="#b7c3ab" fontSize="10" fontFamily="monospace">REGION → MASK</text>
+      <text x="361" y="88" fill="#c6eb95" fontSize="12" fontFamily="monospace">LOOK CLOSER.</text><text x="361" y="109" fill="#879a85" fontSize="10" fontFamily="monospace">Evidence at the pixel.</text>
+    </svg><div className="monitor-bottom"><span><i/> REFERENCE PIPELINE VERIFIED</span><span>RGB → MASK</span></div>
+  </div>;
+}
 export default function TafeIdPage() {
-  return <Shell>
-    <section className="tafe-hero">
-      <div className="tafe-hero-copy">
-        <Eyebrow>RTM document forensics · verified reference inference</Eyebrow>
-        <h1>Locate the edit.<br/><span>Show the evidence.</span></h1>
-        <p className="lede">TAFE-ID localizes manipulated text and regions in document images. The public result is grounded in the authors&apos; released ASCFormer checkpoint, an audited RTM pipeline, and a reproducible CUDA environment.</p>
-        <div className="actions">
-          <a className="primary" href="#sample">Try the sample result</a>
-          <a className="secondary" href="#reproduce">Reproduce the run</a>
-        </div>
-        <p className="hero-disclaimer">Research prototype · pixel localization · no production claim</p>
-      </div>
-      <div className="tafe-signal" aria-label="TAFE-ID processing overview">
-        <div className="signal-doc"><i/><i/><i/><i/><span/></div>
-        <div className="signal-path"><b>RGB</b><b>JPEG / DCT</b><b>FUSION</b></div>
-        <div className="signal-mask"><span>MASK</span></div>
-      </div>
-    </section>
-
-    <section className="tafe-metrics">
-      {metrics.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
-      <p>Recorded on a fixed 32-document RTM held-out verification subset. These are project verification results, not the complete paper benchmark.</p>
-    </section>
-
-    <section className="section tafe-note">
-      <Eyebrow>A note to Team HyperVerge</Eyebrow>
-      <h2>Built after my technical interview.</h2>
-      <p>After my technical interview with HyperVerge, I wanted to keep exploring the problem rather than stop at the conversation. I built TAFE-ID to understand document-forgery localization end to end: data integrity, frequency evidence, segmentation failure modes, reproducible inference, and the gap between a convincing demo and a defensible result.</p>
-      <p>The strongest lesson was simple: a working forensic system is not the experiment with the longest training run. It is the one whose data, checkpoint, evaluation and limitations can all be inspected.</p>
-    </section>
-
-    <section className="section" id="sample">
-      <div className="split"><div><Eyebrow>Interactive sample</Eyebrow><h2>See how a localized result is presented.</h2></div><p>The model returns a mask aligned to the source document. In the tested self-check, the released checkpoint found a small edited text region with a maximum manipulation probability of 0.969.</p></div>
-      <TamperSample/>
-    </section>
-
-    <section className="section panel">
-      <Eyebrow>What runs under the hood</Eyebrow>
-      <div className="split"><h2>Appearance and frequency evidence meet at the pixel.</h2><p>ASCFormer combines visual structure with JPEG-domain forensic cues, fuses evidence across multiple scales, and produces a dense manipulation map. The pipeline was verified with strict checkpoint loading and live CUDA operator tests.</p></div>
-      <div className="tafe-flow">
-        <article><span>01</span><h3>Document image</h3><p>RGB appearance, layout and local text structure.</p></article>
-        <article><span>02</span><h3>JPEG evidence</h3><p>DCT coefficients and quantization information expose compression inconsistencies.</p></article>
-        <article><span>03</span><h3>Cross-attention fusion</h3><p>Multi-scale branches exchange complementary evidence.</p></article>
-        <article><span>04</span><h3>Dense mask</h3><p>Every pixel receives a predicted manipulation label.</p></article>
-      </div>
-    </section>
-
-    <section className="section">
-      <div className="split"><div><Eyebrow>Held-out behavior</Eyebrow><h2>Strong on several edit families. Weak on subtle synthesis.</h2><p>Aggregate precision is high, but performance varies sharply by manipulation type. Inpaint and insert remain difficult. Clean documents contain no positive pixels, so positive-class pixel F1 is not meaningful for that category.</p></div><div className="category-bars">{categories.map(([name, score]) => <div key={name as string}><span>{name}</span><i><b style={{width: `${Number(score) * 100}%`}}/></i><strong>{Number(score).toFixed(3)}</strong></div>)}</div></div>
-    </section>
-
-    <section className="section tafe-truth">
-      <Eyebrow>Research record</Eyebrow>
-      <h2>The failed branch is part of the result.</h2>
-      <div className="truth-grid">
-        <article><strong>9,000</strong><span>RTM images and aligned masks audited</span></article>
-        <article><strong>500</strong><span>custom frequency-pilot updates completed</span></article>
-        <article><strong>0.000</strong><span>held-out F1 for the rejected custom pilot</span></article>
-        <article><strong>0.623</strong><span>held-out F1 from the verified released model</span></article>
-      </div>
-      <p className="research-callout">The custom TAFE frequency model learned four fixed crops but collapsed to background predictions on held-out documents. It was rejected rather than presented as a success. The usable system therefore ships the authors&apos; released ASCFormer checkpoint, with that distinction kept explicit.</p>
-    </section>
-
-    <section className="section" id="reproduce">
-      <div className="split"><div><Eyebrow>Reproducibility</Eyebrow><h2>One verified package. Exact environment.</h2></div><div><p>The archived deliverable contains the pinned source, official checkpoint, demo, deterministic self-test, environment lock and verification metrics. Dataset files are excluded because of size.</p><dl className="tafe-manifest"><div><dt>Python</dt><dd>3.8.20</dd></div><div><dt>PyTorch</dt><dd>2.0.0 + CUDA 11.8</dd></div><div><dt>MMCV</dt><dd>2.0.0</dd></div><div><dt>Checkpoint</dt><dd>Strict load passed</dd></div><div><dt>Package SHA-256</dt><dd>d69041eb…fe39a49</dd></div></dl></div></div>
-    </section>
-
-    <section className="section cta">
-      <Eyebrow>Independent research implementation</Eyebrow>
-      <h2>Useful because the limits are visible.</h2>
-      <p>TAFE-ID demonstrates a working forensic inference pipeline. It does not claim a newly trained state-of-the-art model, a complete paper reproduction, or production readiness.</p>
-      <div className="actions centered"><Link className="primary" href="/methodology">Read the methodology</Link><a className="secondary" href="https://github.com/ninadnaik03/idsentinel">Inspect the source ↗</a></div>
-    </section>
-  </Shell>;
+  return <div className="tafe-lab" id="top">
+    <a className="lab-skip" href="#main">Skip to content</a>
+    <header className="lab-header"><a className="lab-brand" href="#top"><span className="lab-emblem">T<span>+</span></span>TAFE-ID<small>FORENSICS LAB</small></a><nav aria-label="TAFE-ID navigation">{links.map(([url,label])=><a href={url} key={url}>{label}</a>)}</nav><a className="lab-header-cta" href="#reproduce">Runbook ↗</a></header>
+    <main id="main">
+      <section className="lab-hero lab-width"><div><p className="lab-kicker">INDEPENDENT RESEARCH / DOCUMENT INTEGRITY</p><h1>Small edits.<br/>Big <em>signals.</em></h1><p className="lab-intro">A closer look at document tampering. TAFE-ID explores how visual and frequency evidence can reveal manipulated text, one region at a time.</p><div className="lab-actions"><a className="lab-button" href="#sample">Explore the workbench <span>↗</span></a><a className="lab-link" href="#results">Read the evidence ↓</a></div><p className="lab-caption">REFERENCE INFERENCE VERIFIED / RESEARCH PROTOTYPE</p></div><ScanGraphic/></section>
+      <section className="lab-stats lab-width" id="results"><div className="stats-label">REFERENCE CHECKPOINT<br/><strong>32 documents.</strong><span>RTM verification subset</span></div>{[["84.4%","Precision"],["49.3%","Recall"],["0.623","Pixel F1"],["0.452","IoU"]].map(([v,l])=><div key={l}><strong>{v}</strong><span>{l}</span></div>)}</section>
+      <p className="lab-width lab-footnote">Recorded ASCFormer results on a 32-document held-out subset. These numbers are not a full benchmark or a claim about the custom TAFE model.</p>
+      <section className="lab-section lab-width" id="sample"><div className="lab-section-head"><div><p className="lab-kicker">01 / THE WORKBENCH</p><h2>Inspect the region.<br/><em>Understand the output.</em></h2></div><p>A segmentation mask shows where the model suspects an edit. This interactive illustration explains the interface; it does not perform inference or represent a recorded prediction.</p></div><TamperSample/></section>
+      <section className="lab-section lab-dark" id="method"><div className="lab-width"><p className="lab-kicker">02 / TWO RESEARCH TRACKS</p><h2>Follow the evidence<br/>through the system.</h2><div className="lab-track-grid"><article><span className="lab-tag">VERIFIED REFERENCE</span><h3>ASCFormer inference</h3><p>The RTM authors’ released model is the working reference. Strict checkpoint loading, CUDA operators and document inference passed in the isolated environment.</p><ol><li>RTM document image</li><li>Authors’ preprocessing and model</li><li>Aligned manipulation mask</li><li>Overlay and pixel-level evaluation</li></ol></article><article><span className="lab-tag">CUSTOM EXPERIMENT</span><h3>TAFE frequency branch</h3><p>Our experimental pipeline reads real JPEG coefficients and quantization tables alongside RGB crops. Learning fixed crops did not establish useful held-out performance.</p><ol><li>RGB + JPEG DCT + quantization table</li><li>Frequency-aware crop alignment</li><li>TAFE-Net forward / backward audit</li><li>Bounded training and held-out checks</li></ol></article></div><p className="lab-caption">RTM = REAL TEXT MANIPULATION, THE DOCUMENT DATASET USED IN THIS PROJECT.</p></div></section>
+      <section className="lab-section lab-width"><div className="lab-section-head"><div><p className="lab-kicker">03 / PERFORMANCE PROFILE</p><h2>Not every edit<br/>leaves the same trace.</h2><p>Reference-model F1 by manipulation type, from the same 32-document subset. Small category counts limit what we can conclude.</p></div><div className="lab-bars">{categories.map(([name,value])=><div key={name}><span>{name}</span><div><i style={{width:`${value*100}%`}}/></div><b>{value.toFixed(3)}</b></div>)}<p className="lab-footnote">Inpaint and insert are weak points. Clean-document false positives need separate reporting; positive-class F1 alone does not measure them.</p></div></div></section>
+      <section className="lab-section lab-width lab-record" id="record"><p className="lab-kicker">04 / LAB NOTES</p><h2>What worked.<br/><em>What we learned.</em></h2><div className="lab-notes"><article><span>01 — DATA</span><h3>Check the inputs first.</h3><p>9,000 RTM images and masks were restored. Crop alignment and actual JPEG coefficients were inspected before frequency experiments.</p></article><article><span>02 — TRAINING</span><h3>Memorization is not validation.</h3><p>Four-crop overfit tests passed, but custom models remained weak on held-out documents. BatchNorm statistics and loss balance were investigated.</p></article><article><span>03 — DELIVERY</span><h3>Ship the verified reference.</h3><p>The authors’ checkpoint produced usable localization and a working Colab demo. Its results remain distinct from our custom training experiments.</p></article></div></section>
+      <section className="lab-section lab-width" id="reproduce"><div className="lab-section-head"><div><p className="lab-kicker">05 / REPRODUCIBILITY</p><h2>Keep the run<br/><em>inspectable.</em></h2><p>The verified package is saved in the project owner’s Drive as <strong>TAFE-ID-Final.zip</strong>. The GPU demo runs separately from this website; arbitrary image uploads are not connected here.</p><a className="lab-link" href="/tafe-id/verification.json" download>Download recorded verification JSON ↗</a></div><dl className="lab-manifest"><div><dt>Python</dt><dd>3.8.20</dd></div><div><dt>PyTorch / CUDA</dt><dd>2.0.0 / 11.8</dd></div><div><dt>MMCV / MMEngine</dt><dd>2.0.0 / 0.7.0</dd></div><div><dt>Checkpoint loading</dt><dd>Strict · passed</dd></div><div><dt>Reference source</dt><dd><a href="https://github.com/DrLuo/RTM" target="_blank" rel="noreferrer">Authors’ RTM repository ↗</a></dd></div><div><dt>Archive SHA-256</dt><dd className="lab-hash">d69041ebc4a6b872b7d0f2a8c6a1da10278e394b7b0853d9e4fb74530fe39a49</dd></div></dl></div></section>
+      <aside className="lab-width lab-letter"><p className="lab-kicker">A SMALL NOTE TO TEAM HYPERVERGE</p><h2>The conversation<br/><em>continued in code.</em></h2><p>I built TAFE-ID after my technical interview with HyperVerge to explore document tampering in more depth. This project records the experiments, the failures, and the reference pipeline I could verify. Thank you for the conversation that prompted me to keep building.</p><span className="lab-signature">Ninad Naik / Independent project</span></aside>
+    </main><footer className="lab-footer lab-width"><a className="lab-brand" href="#top">TAFE-ID<span className="lab-footer-cross">+</span></a><p>Document forensics, with an inspectable research record.</p><a href="#top">Back to top ↑</a></footer>
+  </div>;
 }

@@ -1,28 +1,6 @@
 "use client";
-
 import { useState } from "react";
-
 export function TamperSample() {
-  const [showMask, setShowMask] = useState(true);
-
-  return <div className="tafe-sample">
-    <div className={`sample-document ${showMask ? "mask-on" : ""}`} aria-label="Illustrative document result showing a localized edit">
-      <div className="sample-paper">
-        <div className="sample-topline" />
-        <div className="sample-title" />
-        <div className="sample-rule" />
-        <div className="sample-lines">
-          <i/><i/><i/><i/><i/><i/><i/><i/><i/><i/>
-        </div>
-        <div className="sample-edit"><span>localized text edit</span></div>
-        <div className="sample-lines lower"><i/><i/><i/><i/><i/><i/></div>
-      </div>
-    </div>
-    <div className="sample-controls">
-      <div><span className="sample-status">Verified inference format</span><h3>Pixel-level manipulation mask</h3><p>Toggle the mask to inspect how the interface separates the document from the predicted altered region. This visual is an interface illustration; the reported metrics below come from recorded model evaluation.</p></div>
-      <button onClick={() => setShowMask(value => !value)} aria-pressed={showMask}>
-        {showMask ? "Hide predicted mask" : "Show predicted mask"}
-      </button>
-    </div>
-  </div>;
+  const [mask,setMask]=useState(true);
+  return <div className="lab-workbench"><div className="workbench-bar"><span>DOCUMENT VIEWER / SAMPLE 001</span><span>ILLUSTRATIVE · NO INFERENCE</span></div><div className="workbench-body"><div className="lab-document-stage"><div className="lab-document"><div className="document-letterhead">TAFE / SAMPLE ARCHIVE<span>001</span></div><h3>Document integrity<br/>inspection record</h3><p>Prepared for the document forensics workbench.</p><hr/><div className="document-rows"><div><span>Reference</span><b>TF–2026–001</b></div><div><span>Document</span><b>Illustrative sample</b></div><div className={mask?'example-region visible':'example-region'}><span>Amount</span><b>12,480.00</b>{mask&&<small>ILLUSTRATED REGION</small>}</div><div><span>Review</span><b>Visual inspection</b></div></div><p className="document-copy">A localized mask helps a reviewer identify a region to inspect. The highlighted amount is a designed example, not a prediction made by the model.</p><div className="document-stamp">SAMPLE<br/>NOT A REAL RECORD</div></div></div><div className="lab-view-controls"><p className="lab-kicker">VIEW MODE / {mask?'OVERLAY':'DOCUMENT'}</p><h3>A small region.<br/>A closer inspection.</h3><p>Switch the overlay on and off to see how a localized result is presented. The highlight is fixed for this illustration.</p><button type="button" className="lab-button" aria-pressed={mask} onClick={()=>setMask(!mask)}>{mask?'Hide example overlay':'Show example overlay'}<span>{mask?'−':'+'}</span></button><div className="viewer-key"><i/> ILLUSTRATED INSPECTION REGION</div><p className="lab-footnote">For measured model behavior, see the reference results below and the downloadable verification record.</p></div></div></div>;
 }
