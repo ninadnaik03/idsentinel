@@ -85,6 +85,14 @@ These are proposed defaults, not paper claims:
 
 ## Decisions deferred until M1 evidence
 
+## Website correction — 2026-10-04
+
+- TAFE-ID pages share a route layout so their stylesheet and metadata load on direct visits as well as navigation.
+- The verified ASCFormer reference belongs to Luo et al., “Toward real text manipulation detection: New dataset and new solution” (Pattern Recognition, 2024), DOI 10.1016/j.patcog.2024.110828. The Peterlin/Batagelj PDF belongs to the separate IDSentinel project and must not be attributed to ASCFormer.
+- Publish the TAFE-ID section under the existing ninadnaik.dev portfolio without replacing the portfolio homepage. Preserve all research artifacts; this work changes publication only.
+- Recorded 32-document scores are small-subset project checks, not independent confirmation of the authors’ benchmark or proof of document-lineage separation.
+- The default website example is the user-supplied screenshot of the successful ASCFormer `edit_0192` self-test. Its red region is a recorded prediction. Browser-selected images remain unprocessed and receive no fabricated mask.
+
 - Whether Protocol A should include passport layouts or be restricted to card-shaped documents after M2 portrait-extraction QA.
 - Corpus-wide exact/near-duplicate clearance after selected media acquisition.
 - Final train-ready counts after decode and portrait-extraction QC.
