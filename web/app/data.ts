@@ -5,6 +5,7 @@ export const models = [
 ];
 export const classes=["BONA_FIDE","PRINT","SCREEN"];
 export const nav=[
+  ["/tafe-id","TAFE-ID"],
   ["/research","Research"],["/24-hours","24 Hours"],["/experiments","Experiments"],["/architecture","Architecture"],
   ["/methodology","Methodology"],["/failures","Failures"],["/demo","Demo"],["/about","About"]
 ];

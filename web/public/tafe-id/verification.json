@@ -1,0 +1,9 @@
+{
+  "evaluation_scope": "32 held-out RTM documents",
+  "model": "authors' released ASCFormer checkpoint",
+  "precision": 0.8441228902498634,
+  "recall": 0.4933060000252049,
+  "f1": 0.6227035912647708,
+  "iou": 0.45212024609793094,
+  "package_sha256": "d69041ebc4a6b872b7d0f2a8c6a1da10278e394b7b0853d9e4fb74530fe39a49"
+}
